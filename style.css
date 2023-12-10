@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    overflow-y: auto;
+  }
+  
+  .main {
+    text-align: center;
+    color: white;
+    padding: 50px;
+  }
+  
+  h1 {
+    font-size: 62px;
+  }
+  
+  h1 span {
+    color: violet;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+  
+  .contato {
+    width: 100%;
+    max-width: 400px; /* Adicionei uma largura máxima para o formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .contato input,
+  .contato textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+  
+  button {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+  }
+  
+  .logo {
+    width: 100%;
+    height: auto;
+    max-width: 550px;
+  }
+  
+  #countdown {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: italic;
+    color: violet;
+    margin-bottom: 20px;
+  }
+  
+  #countdown-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #countdown-numeros {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  #countdown-texto {
+    font-size: 14px;
+    color: white;
+  }
+  
+  .star {
+    position: fixed;
+    background-color: white;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    animation: twinkling 5s infinite;
+  }
+
+  .stars::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100vh;
+    background-color: transparent;
+    transform: translateX(-20%);
+  }
+
+  .footer{
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  @keyframes twinkling {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-5px);
+      opacity: 0.2;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .main {
+      padding: 30px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    h2 {
+      font-size: 18px;
+    }
+  
+    .contato {
+        flex-direction: row; /* Restaura a orientação para linha em telas maiores */
+      }
+    
+    .contato input,
+    .contato textarea {
+        width: calc(50% - 10px); /* Divide o espaço em 50% para cada campo, com uma pequena margem entre eles */
+    }
+  }
+  
