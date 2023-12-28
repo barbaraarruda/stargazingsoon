@@ -136,7 +136,7 @@ body {
   }
 
   ::-webkit-scrollbar{
-    width: 10px;
+    width: 5px;
   }
 
   ::-webkit-scrollbar-thumb{
@@ -160,7 +160,7 @@ body {
 
   @keyframes lightsaberGlow {
     to{
-      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 20px 10px violet;
     }
   }
   @keyframes twinkling {

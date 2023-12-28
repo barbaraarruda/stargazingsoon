@@ -112,3 +112,8 @@ function createStars() {
       document.body.classList.remove(scrollGlowClass);
     }
   });
+
+  //esconder o email
+  const email = 'systemstargazing@gmail.com';
+  const encodedEmail = encodeURIComponent(email);
+  const url = `https://formsubmit.co/${encodedEmail}`;
