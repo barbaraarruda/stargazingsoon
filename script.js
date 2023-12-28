@@ -56,7 +56,7 @@ function inscrever() {
 }
 // Função para criar estrelas dinamicamente
 function createStars() {
-    const numberOfStars = 100;
+    const numberOfStars = 400;
     const starsContainer = document.querySelector('.stars');
   
     for (let i = 0; i < numberOfStars; i++) {
@@ -66,6 +66,24 @@ function createStars() {
       star.style.top = `${Math.random() * 100}%`;
       starsContainer.appendChild(star);
     }
+
+    //atualizando periodicamente a posição das estrelas
+    setInterval(updateStarsPosition, 20000);
+  }
+  //função para atualizar a posição das estrelas
+  function updateStarsPosition(){
+    const stars =  document.querySelectorAll('.star');
+
+    stars.forEach(star => {
+      const movementX = (Math.random() - 0.5) * 10; //movimento horizontal
+      const movementY = (Math.random() - 0.5) * 10; //movimento vertical
+      const currentLeft = parseFloat(star.style.left);
+      const currentTop = parseFloat(star.style.top);
+      const newLeft = `${Math.max(0, Math.min(100, currentLeft + movementX))}%`;
+      const newTop = `${Math.max(0, Math.min(100, currentTop + movementY))}%`;
+      star.style.left = newLeft;
+      star.style.top = newTop;
+    });
   }
   
   // Chame a função para criar estrelas quando a página carregar

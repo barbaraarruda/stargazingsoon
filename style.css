@@ -2,13 +2,16 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: black;
-    overflow-y: auto;
+    overflow: auto;
+    padding-bottom: 60px;
   }
-  
+
   .main {
     text-align: center;
     color: white;
     padding: 50px;
+    position: relative;
+    z-index: 1;
   }
   
   h1 {
@@ -118,12 +121,26 @@ body {
   }
 
   .footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: transparent;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+    animation: lightsaberGlow 1s infinite alternate;
+    z-index: 2;
   }
 
+
+  @keyframes lightsaberGlow {
+    to{
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+    }
+  }
   @keyframes twinkling {
     0%, 100% {
       transform: translateY(0);
@@ -155,6 +172,9 @@ body {
     .contato input,
     .contato textarea {
         width: calc(50% - 10px); /* Divide o espaço em 50% para cada campo, com uma pequena margem entre eles */
+    }
+    .footer{
+      font-size: 12px;
     }
   }
   
