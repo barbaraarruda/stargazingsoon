@@ -88,3 +88,27 @@ function createStars() {
   
   // Chame a função para criar estrelas quando a página carregar
   window.onload = createStars;
+
+  //adicionar classe ao corpo quando a página carrega
+  document.body.classList.add('scroll-animation');
+
+  //removendo a classe ao rolar para cima
+  window.addEventListener('scroll', function() {
+    if (window.scrollY === 0) {
+      document.body.classList.add('scroll-animation');
+    } else {
+      document.body.classList.remove('scroll-animation');
+    }
+  });
+
+  //adiciona e remove a classe glow com base no evento de rolagem
+  window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const scrollGlowClass = 'scroll-glow';
+
+    if(scrollPosition > 0) {
+      document.body.classList.add(scrollGlowClass);
+    } else {
+      document.body.classList.remove(scrollGlowClass);
+    }
+  });

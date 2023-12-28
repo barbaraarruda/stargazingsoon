@@ -135,6 +135,28 @@ body {
     z-index: 2;
   }
 
+  ::-webkit-scrollbar{
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: violet; /*cor do ponteiro da barra de rolagem */
+    border-radius: 6px;
+    animation: glow 2s infinite alternate; /*adicionando a animação */
+  }
+
+  body.scroll-animation ::-webkit-scrollbar-thumb{
+    background-color: violet;
+  }
+
+  @keyframes glow{
+    from{
+      background-color: violet;
+    }
+    to{
+      background-color: aliceblue;
+    }
+  }
 
   @keyframes lightsaberGlow {
     to{
